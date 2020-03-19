@@ -14,7 +14,8 @@ pipeline {
  stage('Test') {
  steps {
  sh "mvn test"
-    }
+            }
+        }
  }
  stage('newman') {
              steps {
@@ -58,4 +59,3 @@ pipeline {
            }
         }
     }
- }
