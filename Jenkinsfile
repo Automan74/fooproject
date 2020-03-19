@@ -35,3 +35,7 @@ pipeline {
  '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!'
  }
  }
+ }
+ }
+ }
+ }
