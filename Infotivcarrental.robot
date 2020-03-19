@@ -1,6 +1,6 @@
 *** Settings ***
 Documentation
-Resource        ../Resources/keywords.robot
+Resource        Keywords.robot
 Library         SeleniumLibrary
 Library         DateTime
 
