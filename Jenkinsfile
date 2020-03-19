@@ -4,17 +4,17 @@ pipeline {
  stage('Checkout') {
  steps {
  git 'https://github.com/Automan74/fooproject.git'
- }
+    }
  }
  stage('Build') {
  steps {
  sh "mvn compile"
- }
+    }
  }
  stage('Test') {
  steps {
  sh "mvn test"
- }
+    }
  }
  stage('newman') {
              steps {
@@ -23,10 +23,10 @@ pipeline {
              post {
                  always {
                          junit '**/*xml'
-                     }
-                 }
+             }
+
         }
-    }
+   }
  post {
  always {
  junit '**/TEST*.xml'
