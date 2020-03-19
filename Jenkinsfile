@@ -12,10 +12,14 @@ pipeline {
     }
  }
  stage('Test') {
- steps {
- sh "mvn test"
-            }
-        }
+    steps {
+    sh "mvn test"
+  }
+  post {
+                       always {
+                               junit '**/*xml'
+                              }
+                        }
  }
  stage('newman') {
              steps {
@@ -48,8 +52,10 @@ pipeline {
                                  ]
                             )
                      }
-                }
+                  }
+              }
          }
+ }
  post {
       always {
       junit '**/TEST*.xml'
@@ -58,4 +64,4 @@ pipeline {
       '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!'
            }
         }
-    }
+ }
