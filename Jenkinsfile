@@ -25,8 +25,8 @@ pipeline {
                          junit '**/*xml'
                      }
                  }
-
-
+        }
+    }
  post {
  always {
  junit '**/TEST*.xml'
